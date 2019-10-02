@@ -34,24 +34,24 @@ class StudioLightsObject : public ObjectData {
 
 	private:
 
-		BaseObject* fillLight; // Olight object
-		BaseObject* keyLight; // Olight object
-		BaseObject* backLight; // Olight object
-		BaseObject* camera; // Ocamera object
-		BaseObject* stageSplineExtrude; // Oextrude object
+		BaseObject* _fillLight; // Olight object
+		BaseObject* _keyLight; // Olight object
+		BaseObject* _backLight; // Olight object
+		BaseObject* _camera; // Ocamera object
+		BaseObject* _stageSplineExtrude; // Oextrude object
 
 		// Spline points for the stage
-		Vector stageSplinePoints[3];
+		Vector _stageSplinePoints[3];
 		// The spline that defines the stage curve
-		SplineObject* stageSpline; 
+		SplineObject* _stageSpline; 
 		// The length of the stage extruded stageSpline
-		Float stageLength;
+		Float _stageLength;
 
 		// Target tags
-		BaseTag* fillLightTargetTag;
-		BaseTag* keyLightTargetTag;
-		BaseTag* backLightTargetTag;
-		BaseTag* cameraTargetTag;
+		BaseTag* _fillLightTargetTag;
+		BaseTag* _keyLightTargetTag;
+		BaseTag* _backLightTargetTag;
+		BaseTag* _cameraTargetTag;
 
 	public:
 		static NodeData* Alloc() { return NewObj(StudioLightsObject) iferr_ignore("Error handled in C4D."); }
@@ -64,7 +64,7 @@ class StudioLightsObject : public ObjectData {
 
 
 
-	Bool StudioLightsObject::Init(GeListNode* node) {
+Bool StudioLightsObject::Init(GeListNode* node) {
 		BaseContainer* bc = ((BaseList2D*)node)->GetDataInstance();
 
 		// check for main thread
@@ -76,9 +76,9 @@ class StudioLightsObject : public ObjectData {
 			return false;
 
 		// Default Spline points
-		stageSplinePoints[0] = Vector(0, 0, -500);
-		stageSplinePoints[1] = Vector(0, 0, 500);
-		stageSplinePoints[2] = Vector(0, 500, 500);
+		_stageSplinePoints[0] = Vector(0, 0, -500);
+		_stageSplinePoints[1] = Vector(0, 0, 500);
+		_stageSplinePoints[2] = Vector(0, 500, 500);
 
 		// General Tab Defaults
 		bc->SetLink(ID_STUDIOLIGHTS_GENERAL_TARGET_LINKBOX, nullptr);
@@ -105,36 +105,36 @@ class StudioLightsObject : public ObjectData {
 		bc->SetBool(ID_STUDIOLIGHTS_CAMERA_TARGET_CHECKBOX, true);
 
 		// Stage tab defaults
-		stageLength = 1000.0f;
-		bc->SetFloat(ID_STUDIOLIGHTS_STAGE_LENGTH, stageLength);
+		_stageLength = 1000.0f;
+		bc->SetFloat(ID_STUDIOLIGHTS_STAGE_LENGTH, _stageLength);
 
 		
 		// Create stage objects
-		fillLight = BaseObject::Alloc(Olight);
-		keyLight = BaseObject::Alloc(Olight);
-		backLight = BaseObject::Alloc(Olight);
-		camera = BaseObject::Alloc(Ocamera);
-		stageSplineExtrude = BaseObject::Alloc(Oextrude);
+		_fillLight = BaseObject::Alloc(Olight);
+		_keyLight = BaseObject::Alloc(Olight);
+		_backLight = BaseObject::Alloc(Olight);
+		_camera = BaseObject::Alloc(Ocamera);
+		_stageSplineExtrude = BaseObject::Alloc(Oextrude);
 
 		// Create spline from spline points
-		stageSpline = FitCurve(stageSplinePoints, 3, 1, nullptr);
-		BaseContainer* stageSplineData = stageSpline->GetDataInstance();
+		_stageSpline = FitCurve(_stageSplinePoints, 3, 1, nullptr);
+		BaseContainer* stageSplineData = _stageSpline->GetDataInstance();
 		stageSplineData->SetFloat(SPLINEOBJECT_ANGLE, 0.0f);
 		
 		
 
 
-		if (fillLight == nullptr
-			|| keyLight == nullptr
-			|| backLight == nullptr
-			|| stageSplineExtrude == nullptr
-			|| stageSpline == nullptr)
+		if (_fillLight == nullptr
+			|| _keyLight == nullptr
+			|| _backLight == nullptr
+			|| _stageSplineExtrude == nullptr
+			|| _stageSpline == nullptr)
 		{
-			BaseObject::Free(fillLight);
-			BaseObject::Free(keyLight);
-			BaseObject::Free(backLight);
-			BaseObject::Free(stageSplineExtrude);
-			SplineObject::Free(stageSpline);
+			BaseObject::Free(_fillLight);
+			BaseObject::Free(_keyLight);
+			BaseObject::Free(_backLight);
+			BaseObject::Free(_stageSplineExtrude);
+			SplineObject::Free(_stageSpline);
 
 			return false;
 		}
@@ -143,15 +143,15 @@ class StudioLightsObject : public ObjectData {
 
 		// set names of stage objects
 		
-		fillLight->SetName("Fill Light"_s);
-		keyLight->SetName("Key Light"_s);
-		backLight->SetName("Back Light"_s);
+		_fillLight->SetName("Fill Light"_s);
+		_keyLight->SetName("Key Light"_s);
+		_backLight->SetName("Back Light"_s);
 		camera->SetName("Studio Camera"_s);
-		stageSplineExtrude->SetName("Studio Stage"_s);
-		stageSpline->SetName("Spline"_s);
+		_stageSplineExtrude->SetName("Studio Stage"_s);
+		_stageSpline->SetName("Spline"_s);
 
 		// Set extrude object's length
-		stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(stageLength, 0, 0));
+		_stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(_stageLength, 0, 0));
 
 		// Create a big undo for all the objects that are being inserted when this object is made
 		doc->StartUndo();
@@ -159,57 +159,57 @@ class StudioLightsObject : public ObjectData {
 		// Use the current node as the parent container for all our stage objects
 		BaseObject* parentObject = static_cast<BaseObject*>(node);
 
-		doc->InsertObject(fillLight, parentObject, nullptr);
-		doc->InsertObject(keyLight, parentObject, nullptr);
-		doc->InsertObject(backLight, parentObject, nullptr);
+		doc->InsertObject(_fillLight, parentObject, nullptr);
+		doc->InsertObject(_keyLight, parentObject, nullptr);
+		doc->InsertObject(_backLight, parentObject, nullptr);
 		doc->InsertObject(camera, parentObject, nullptr);
-		doc->InsertObject(stageSplineExtrude, parentObject, nullptr);
-		doc->InsertObject(stageSpline, stageSplineExtrude, nullptr);
+		doc->InsertObject(_stageSplineExtrude, parentObject, nullptr);
+		doc->InsertObject(_stageSpline, _stageSplineExtrude, nullptr);
 
 
 		doc->AddUndo(UNDOTYPE::NEWOBJ, parentObject);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, fillLight);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, keyLight);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, backLight);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _fillLight);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _keyLight);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _backLight);
 		doc->AddUndo(UNDOTYPE::NEWOBJ, camera);
 
-		doc->AddUndo(UNDOTYPE::NEWOBJ, stageSplineExtrude);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, stageSpline);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _stageSplineExtrude);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _stageSpline);
 
 		// Set the default positions for the stage objects
-		// TODO: (steven) remove magic values
-		fillLight->SetRelPos(Vector(300, 50, 0));
-		keyLight->SetRelPos(Vector(-300, 50, 0));
-		backLight->SetRelPos(Vector(-300, 50, 300));
+		// TODO: (Steven) remove magic values
+		_fillLight->SetRelPos(Vector(300, 50, 0));
+		_keyLight->SetRelPos(Vector(-300, 50, 0));
+		_backLight->SetRelPos(Vector(-300, 50, 300));
 		camera->SetRelPos(Vector(0, 0, -200));
 
 		// Move the stage half way so that it is centered on the camera
-		stageSplineExtrude->SetRelPos(Vector(-stageLength * 0.5f, 0, 0));
-		stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(stageLength, 0, 0));
+		_stageSplineExtrude->SetRelPos(Vector(-_stageLength * 0.5f, 0, 0));
+		_stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(_stageLength, 0, 0));
 
 		// Create target tags for the stage objects
-		fillLightTargetTag = fillLight->MakeTag(Ttargetexpression);
-		keyLightTargetTag = keyLight->MakeTag(Ttargetexpression);
-		backLightTargetTag = backLight->MakeTag(Ttargetexpression);
-		cameraTargetTag = camera->MakeTag(Ttargetexpression);
+		_fillLightTargetTag = _fillLight->MakeTag(Ttargetexpression);
+		_keyLightTargetTag = _keyLight->MakeTag(Ttargetexpression);
+		_backLightTargetTag = _backLight->MakeTag(Ttargetexpression);
+		_cameraTargetTag = camera->MakeTag(Ttargetexpression);
 
-		if (fillLightTargetTag == nullptr
-			|| keyLightTargetTag == nullptr
-			|| backLightTargetTag == nullptr
-			|| cameraTargetTag == nullptr)
+		if (_fillLightTargetTag == nullptr
+			|| _keyLightTargetTag == nullptr
+			|| _backLightTargetTag == nullptr
+			|| _cameraTargetTag == nullptr)
 		{
 			return false;
 		}
 
-		doc->AddUndo(UNDOTYPE::NEWOBJ, fillLightTargetTag);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, keyLightTargetTag);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, backLightTargetTag);
-		doc->AddUndo(UNDOTYPE::NEWOBJ, cameraTargetTag);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _fillLightTargetTag);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _keyLightTargetTag);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _backLightTargetTag);
+		doc->AddUndo(UNDOTYPE::NEWOBJ, _cameraTargetTag);
 
 		
-		fillLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
-		keyLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
-		backLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
+		_fillLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
+		_keyLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
+		_backLight->GetDataInstance()->SetInt32(LIGHT_TYPE, LIGHT_TYPE_AREA);
 
 		
 
@@ -223,11 +223,11 @@ class StudioLightsObject : public ObjectData {
 	}
 
 
-	Bool StudioLightsObject::GetDEnabling(GeListNode* node, const DescID& id, const GeData& t_data, DESCFLAGS_ENABLE flags, const BaseContainer* itemdesc) {
+Bool StudioLightsObject::GetDEnabling(GeListNode* node, const DescID& id, const GeData& t_data, DESCFLAGS_ENABLE flags, const BaseContainer* itemdesc) {
 		return true;
 	}
 
-	Bool StudioLightsObject::GetDDescription(GeListNode* node, Description* description, DESCFLAGS_DESC& flags) {
+Bool StudioLightsObject::GetDDescription(GeListNode* node, Description* description, DESCFLAGS_DESC& flags) {
 		
 
 		
@@ -252,23 +252,23 @@ class StudioLightsObject : public ObjectData {
 		auto target = data.GetLink(GetActiveDocument());
 
 		C4DAtomGoal* lightTarget = lightTargeetChecked ? target : nullptr;
-		fillLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
-		keyLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
-		backLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
+		_fillLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
+		_keyLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
+		_backLightTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, lightTarget);
 		
 		
 		C4DAtomGoal* cameraTarget = cameraTargeetChecked ? target : nullptr;
-		cameraTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, cameraTarget);
+		_cameraTargetTag->GetDataInstance()->SetLink(TARGETEXPRESSIONTAG_LINK, cameraTarget);
 
 		
 		thisNode->GetParameter(ID_STUDIOLIGHTS_STAGE_LENGTH, data, DESCFLAGS_GET::NONE);
 		Float newExtrudeLength = data.GetFloat();
-		stageLength = newExtrudeLength;
+		_stageLength = newExtrudeLength;
 
 
 		
-		stageSplineExtrude->SetRelPos(Vector(-stageLength * 0.5f, 0, 0));
-		stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(stageLength, 0, 0));
+		_stageSplineExtrude->SetRelPos(Vector(-_stageLength * 0.5f, 0, 0));
+		_stageSplineExtrude->GetDataInstance()->SetVector(EXTRUDEOBJECT_MOVE, Vector(_stageLength, 0, 0));
 		
 		
 
@@ -283,7 +283,7 @@ class StudioLightsObject : public ObjectData {
 		thisNode->GetParameter(ID_STUDIOLIGHTS_LIGHT_FILLLIGHT_COLOR, data, DESCFLAGS_GET::NONE);
 		Vector fillLightColor = data.GetVector();
 
-		BaseContainer* fillLightRef = fillLight->GetDataInstance();
+		BaseContainer* fillLightRef = _fillLight->GetDataInstance();
 		fillLightRef->SetBool(LIGHT_NOLIGHTRADIATION, fillLightChecked);
 		fillLightRef->SetFloat(LIGHT_BRIGHTNESS, fillLightBrightness);
 		fillLightRef->SetVector(LIGHT_COLOR, fillLightColor);
@@ -300,7 +300,7 @@ class StudioLightsObject : public ObjectData {
 		thisNode->GetParameter(ID_STUDIOLIGHTS_LIGHT_KEYLIGHT_COLOR, data, DESCFLAGS_GET::NONE);
 		Vector keyLightColor = data.GetVector();
 
-		BaseContainer* keyLightRef = keyLight->GetDataInstance();
+		BaseContainer* keyLightRef = _keyLight->GetDataInstance();
 		keyLightRef->SetBool(LIGHT_NOLIGHTRADIATION, keyLightChecked);
 		keyLightRef->SetFloat(LIGHT_BRIGHTNESS, keyLightBrightness);
 		keyLightRef->SetVector(LIGHT_COLOR, keyLightColor);
@@ -316,7 +316,7 @@ class StudioLightsObject : public ObjectData {
 		thisNode->GetParameter(ID_STUDIOLIGHTS_LIGHT_BACKLIGHT_COLOR, data, DESCFLAGS_GET::NONE);
 		Vector backLightColor = data.GetVector();
 
-		BaseContainer* backLightRef = backLight->GetDataInstance();
+		BaseContainer* backLightRef = _backLight->GetDataInstance();
 		backLightRef->SetBool(LIGHT_NOLIGHTRADIATION, backLightChecked);
 		backLightRef->SetFloat(LIGHT_BRIGHTNESS, backLightBrightness);
 		backLightRef->SetVector(LIGHT_COLOR, backLightColor);
@@ -329,12 +329,12 @@ class StudioLightsObject : public ObjectData {
 
 
 
-	void RegisterStudioLightsObject()
+void RegisterStudioLightsObject()
+{
+	Bool success = RegisterObjectPlugin(PLUGIN_ID_STUDIOLIGHTSOBJECT, String("Studio Lights Object"), OBJECT_GENERATOR, StudioLightsObject::Alloc, "ostudiolights"_s, nullptr, 0);
+	if (!success)
 	{
-		Bool success = RegisterObjectPlugin(PLUGIN_ID_STUDIOLIGHTSOBJECT, String("Studio Lights Object"), OBJECT_GENERATOR, StudioLightsObject::Alloc, "ostudiolights"_s, nullptr, 0);
-		if (!success)
-		{
-			DiagnosticOutput("Could not register studio lights plugin.");
-		}
+		DiagnosticOutput("Could not register studio lights plugin.");
 	}
+}
 };
