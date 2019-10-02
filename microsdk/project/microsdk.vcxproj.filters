@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="generated">
+      <UniqueIdentifier>{781BB7F9-C235-1B7A-0000-5284111A998F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated\hxx">
+      <UniqueIdentifier>{781BB7F9-C235-1B7A-8ACC-618A6830A19B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{781BB7F9-C235-1B7A-0000-00000001B8A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{781BB7F9-C235-1B7A-0000-0000CA90681B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\description">
+      <UniqueIdentifier>{e742abd9-4b63-4368-bf1f-22b25c4cd523}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\generated\hxx\interface_registration.cpp">
+      <Filter>generated\hxx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\generated\hxx\register.cpp">
+      <Filter>generated\hxx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\objectdata_studiolights.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\res\c4d_symbols.h">
+      <Filter>res</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\res\descriptions\ostudiolights.h">
+      <Filter>res</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\objectdata_studiolights.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="microsdk.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A09CB8D6F66542540E010000 /* libmesh_misc.framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A09CB8D6F66542540E000000 /* libmesh_misc.framework.a */; };
+		A09CB8D6F6801B786E010000 /* user_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6801B786E000000 /* user_interface.cpp */; };
+		A09CB8D6F68682ABC8010000 /* business_logic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09CB8D6F68682ABC8000000 /* business_logic.cpp */; };
+		A09CB8D6F6D80552BB010000 /* interface_registration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6D80552BB000000 /* interface_registration.cpp */; };
+		A09CB8D6F6D93CCD9F010000 /* register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6D93CCD9F000000 /* register.cpp */; };
+		A09CB8D6F6E921D362010000 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6E921D362000000 /* main.cpp */; };
+		A09CB8D6F6F470FF41010000 /* libcinema.framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6F470FF41000000 /* libcinema.framework.a */; };
+		A09CB8D6F6F4AB3A6F010000 /* libcore.framework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A09CB8D6F6F4AB3A6F000000 /* libcore.framework.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A09CB8D6F66542540E040000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA36542540E7B0000;
+			remoteInfo = mesh_misc.framework;
+		};
+		A09CB8D6F66542540E040100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA36542540E7B0100;
+			remoteInfo = "mesh_misc.framework static library";
+		};
+		A09CB8D6F66542540E050000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A08C5CDEA36542540E000000;
+			remoteInfo = mesh_misc.framework;
+		};
+		A09CB8D6F6F470FF41040000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA3F470FF417B0000;
+			remoteInfo = cinema.framework;
+		};
+		A09CB8D6F6F470FF41040100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA3F470FF417B0100;
+			remoteInfo = "cinema.framework static library";
+		};
+		A09CB8D6F6F470FF41050000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A08C5CDEA3F470FF41000000;
+			remoteInfo = cinema.framework;
+		};
+		A09CB8D6F6F4AB3A6F040000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA3F4AB3A6F7B0000;
+			remoteInfo = core.framework;
+		};
+		A09CB8D6F6F4AB3A6F040100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A08C5CDEA3F4AB3A6F7B0100;
+			remoteInfo = "core.framework static library";
+		};
+		A09CB8D6F6F4AB3A6F050000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A08C5CDEA3F4AB3A6F000000;
+			remoteInfo = core.framework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A08C5CDEA39CB8D6F67B0000 /* microsdk.xlib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = microsdk.xlib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08C5CDEA39CB8D6F67B0100 /* libmicrosdk_static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmicrosdk_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09CB8D6F600000000000000 /* debugbase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debugbase.xcconfig; path = ../../../frameworks/settings/debugbase.xcconfig; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F600000000050000 /* releasebase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = releasebase.xcconfig; path = ../../../frameworks/settings/releasebase.xcconfig; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6309F6FCD000000 /* business_logic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = business_logic.h; path = ../source/business_logic.h; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6448F46FA000000 /* c4d_symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c4d_symbols.h; path = ../res/c4d_symbols.h; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mesh_misc.framework.xcodeproj; path = ../../../frameworks/mesh_misc.framework/project/mesh_misc.framework.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6801B786E000000 /* user_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = user_interface.cpp; path = ../source/user_interface.cpp; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F68682ABC8000000 /* business_logic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = business_logic.cpp; path = ../source/business_logic.cpp; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F68F2F2DF3000000 /* user_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = user_interface.h; path = ../source/user_interface.h; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6D80552BB000000 /* interface_registration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = interface_registration.cpp; path = ../generated/hxx/interface_registration.cpp; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6D93CCD9F000000 /* register.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = register.cpp; path = ../generated/hxx/register.cpp; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6E921D362000000 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../source/main.cpp; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cinema.framework.xcodeproj; path = ../../../frameworks/cinema.framework/project/cinema.framework.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core.framework.xcodeproj; path = ../../../frameworks/core.framework/project/core.framework.xcodeproj; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A09CB8D6F6000000000F0000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A09CB8D6F66542540E010000 /* libmesh_misc.framework.a in Frameworks */,
+				A09CB8D6F6F470FF41010000 /* libcinema.framework.a in Frameworks */,
+				A09CB8D6F6F4AB3A6F010000 /* libcore.framework.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A09CB8D6F600000000140000 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */,
+				A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */,
+				A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		A09CB8D6F600000000190000 /* configurations */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F600000000000000 /* debugbase.xcconfig */,
+				A09CB8D6F600000000050000 /* releasebase.xcconfig */,
+			);
+			name = configurations;
+			sourceTree = "<group>";
+		};
+		A09CB8D6F6000000001E0000 = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F600000000190000 /* configurations */,
+				A09CB8D6F6111A998F000000 /* generated */,
+				A09CB8D6F600000000140000 /* libs */,
+				A09CB8D6F600000000230000 /* products */,
+				A09CB8D6F60001B8A0000000 /* res */,
+				A09CB8D6F6CA90681B000000 /* source */,
+			);
+			sourceTree = "<group>";
+		};
+		A09CB8D6F600000000230000 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				A08C5CDEA39CB8D6F67B0100 /* libmicrosdk_static.a */,
+				A08C5CDEA39CB8D6F67B0000 /* microsdk.xlib */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		A09CB8D6F60001B8A0000000 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6448F46FA000000 /* c4d_symbols.h */,
+			);
+			name = res;
+			path = ../res;
+			sourceTree = SOURCE_ROOT;
+		};
+		A09CB8D6F6111A998F000000 /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6681C2CE8000000 /* hxx */,
+			);
+			name = generated;
+			path = ../generated;
+			sourceTree = SOURCE_ROOT;
+		};
+		A09CB8D6F66542540E280000 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F66542540E000000 /* libmesh_misc.framework.a */,
+				A09CB8D6F66542540E000100 /* libmesh_misc.framework_static.a */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		A09CB8D6F6681C2CE8000000 /* hxx */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6D80552BB000000 /* interface_registration.cpp */,
+				A09CB8D6F6D93CCD9F000000 /* register.cpp */,
+			);
+			name = hxx;
+			path = ../generated/hxx;
+			sourceTree = SOURCE_ROOT;
+		};
+		A09CB8D6F6CA90681B000000 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F68682ABC8000000 /* business_logic.cpp */,
+				A09CB8D6F6309F6FCD000000 /* business_logic.h */,
+				A09CB8D6F6E921D362000000 /* main.cpp */,
+				A09CB8D6F6801B786E000000 /* user_interface.cpp */,
+				A09CB8D6F68F2F2DF3000000 /* user_interface.h */,
+			);
+			name = source;
+			path = ../source;
+			sourceTree = SOURCE_ROOT;
+		};
+		A09CB8D6F6F470FF41280000 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6F470FF41000000 /* libcinema.framework.a */,
+				A09CB8D6F6F470FF41000100 /* libcinema.framework_static.a */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+		A09CB8D6F6F4AB3A6F280000 /* products */ = {
+			isa = PBXGroup;
+			children = (
+				A09CB8D6F6F4AB3A6F000000 /* libcore.framework.a */,
+				A09CB8D6F6F4AB3A6F000100 /* libcore.framework_static.a */,
+			);
+			name = products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A09CB8D6F6000000002D0000 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A08C5CDEA39CB8D6F6000000 /* microsdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A09CB8D6F600000000460000 /* Build configuration list for PBXNativeTarget "microsdk" */;
+			buildPhases = (
+				A09CB8D6F600000000690000 /* Run Source Processor */,
+				A09CB8D6F600000000320000 /* Sources */,
+				A09CB8D6F6000000000F0000 /* Frameworks */,
+				A09CB8D6F6000000002D0000 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A09CB8D6F6F470FF41370000 /* PBXTargetDependency */,
+				A09CB8D6F6F4AB3A6F370000 /* PBXTargetDependency */,
+				A09CB8D6F66542540E370000 /* PBXTargetDependency */,
+			);
+			name = microsdk;
+			productName = microsdk;
+			productReference = A08C5CDEA39CB8D6F67B0000 /* microsdk.xlib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A09CB8D6F6000000003C0000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1099;
+			};
+			buildConfigurationList = A09CB8D6F600000000410000 /* Build configuration list for PBXProject "microsdk" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A09CB8D6F6000000001E0000;
+			productRefGroup = A09CB8D6F600000000230000 /* products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A09CB8D6F6F470FF41280000 /* products */;
+					ProjectRef = A09CB8D6F6F470FF41020000 /* cinema.framework.xcodeproj */;
+				},
+				{
+					ProductGroup = A09CB8D6F6F4AB3A6F280000 /* products */;
+					ProjectRef = A09CB8D6F6F4AB3A6F020000 /* core.framework.xcodeproj */;
+				},
+				{
+					ProductGroup = A09CB8D6F66542540E280000 /* products */;
+					ProjectRef = A09CB8D6F66542540E020000 /* mesh_misc.framework.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				A08C5CDEA39CB8D6F6000000 /* microsdk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A09CB8D6F66542540E000000 /* libmesh_misc.framework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmesh_misc.framework.a;
+			remoteRef = A09CB8D6F66542540E040000 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09CB8D6F66542540E000100 /* libmesh_misc.framework_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmesh_misc.framework_static.a;
+			remoteRef = A09CB8D6F66542540E040100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09CB8D6F6F470FF41000000 /* libcinema.framework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcinema.framework.a;
+			remoteRef = A09CB8D6F6F470FF41040000 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09CB8D6F6F470FF41000100 /* libcinema.framework_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcinema.framework_static.a;
+			remoteRef = A09CB8D6F6F470FF41040100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09CB8D6F6F4AB3A6F000000 /* libcore.framework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcore.framework.a;
+			remoteRef = A09CB8D6F6F4AB3A6F040000 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09CB8D6F6F4AB3A6F000100 /* libcore.framework_static.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcore.framework_static.a;
+			remoteRef = A09CB8D6F6F4AB3A6F040100 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A09CB8D6F600000000690000 /* Run Source Processor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Source Processor";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python ${MAXON_ROOTDIR}frameworks/settings/sourceprocessor/sourceprocessor.py \"$PROJECT_DIR/..\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A09CB8D6F600000000320000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A09CB8D6F6801B786E010000 /* user_interface.cpp in Sources */,
+				A09CB8D6F68682ABC8010000 /* business_logic.cpp in Sources */,
+				A09CB8D6F6D80552BB010000 /* interface_registration.cpp in Sources */,
+				A09CB8D6F6D93CCD9F010000 /* register.cpp in Sources */,
+				A09CB8D6F6E921D362010000 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A09CB8D6F66542540E370000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = mesh_misc.framework;
+			targetProxy = A09CB8D6F66542540E050000 /* PBXContainerItemProxy */;
+		};
+		A09CB8D6F6F470FF41370000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cinema.framework;
+			targetProxy = A09CB8D6F6F470FF41050000 /* PBXContainerItemProxy */;
+		};
+		A09CB8D6F6F4AB3A6F370000 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = core.framework;
+			targetProxy = A09CB8D6F6F4AB3A6F050000 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A09CB8D6F6000000004B0000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A09CB8D6F600000000000000 /* debugbase.xcconfig */;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(GCC_PREPROCESSOR_DEFINITIONS)",
+					USE_API_MAXON,
+					PRIVATE_MODULE_net_maxonexample_microsdk,
+					"MAXON_MODULE_ID=\\\"net.maxonexample.microsdk\\\"",
+				);
+				INSTALL_PATH = /..;
+				MAXON_ROOTDIR = ../../../;
+				USER_HEADER_SEARCH_PATHS = "../generated/hxx ../res ../source $(MAXON_ROOTDIR)frameworks/core.framework/source/** $(MAXON_ROOTDIR)frameworks/core.framework/generated/hxx $(MAXON_ROOTDIR)frameworks/cinema.framework/source/** $(MAXON_ROOTDIR)frameworks/cinema.framework/generated/hxx $(MAXON_ROOTDIR)frameworks/mesh_misc.framework/source/** $(MAXON_ROOTDIR)frameworks/mesh_misc.framework/generated/hxx $(inherited)";
+			};
+			name = Debug;
+		};
+		A09CB8D6F600000000500000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A09CB8D6F600000000050000 /* releasebase.xcconfig */;
+			buildSettings = {
+				DEPLOYMENT_LOCATION = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(GCC_PREPROCESSOR_DEFINITIONS)",
+					USE_API_MAXON,
+					PRIVATE_MODULE_net_maxonexample_microsdk,
+					"MAXON_MODULE_ID=\\\"net.maxonexample.microsdk\\\"",
+				);
+				INSTALL_PATH = /..;
+				MAXON_ROOTDIR = ../../../;
+				USER_HEADER_SEARCH_PATHS = "../generated/hxx ../res ../source $(MAXON_ROOTDIR)frameworks/core.framework/source/** $(MAXON_ROOTDIR)frameworks/core.framework/generated/hxx $(MAXON_ROOTDIR)frameworks/cinema.framework/source/** $(MAXON_ROOTDIR)frameworks/cinema.framework/generated/hxx $(MAXON_ROOTDIR)frameworks/mesh_misc.framework/source/** $(MAXON_ROOTDIR)frameworks/mesh_misc.framework/generated/hxx $(inherited)";
+			};
+			name = Release;
+		};
+		A09CB8D6F6000000005A0000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_EXTENSION = xlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		A09CB8D6F6000000005F0000 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_EXTENSION = xlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A09CB8D6F600000000410000 /* Build configuration list for PBXProject "microsdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A09CB8D6F6000000004B0000 /* Debug */,
+				A09CB8D6F600000000500000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A09CB8D6F600000000460000 /* Build configuration list for PBXNativeTarget "microsdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A09CB8D6F6000000005A0000 /* Debug */,
+				A09CB8D6F6000000005F0000 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A09CB8D6F6000000003C0000 /* Project object */;
+}
